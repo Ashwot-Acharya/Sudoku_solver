@@ -1,0 +1,126 @@
+\documentclass[12pt]{beamer}
+
+\usetheme[numbering=fraction]{metropolis}
+
+% Color customization
+\definecolor{myblue}{RGB}{0,105,148}
+\setbeamercolor{title}{fg=myblue}
+\setbeamercolor{frametitle}{bg=myblue!15, fg=myblue}
+\setbeamercolor{progress bar}{fg=myblue}
+\setbeamercolor{structure}{fg=myblue}
+
+% Title info
+\title{\textbf{SAT-Based Approach to Solving Sudoku}}
+\author{\textsf{Lakki Thapa, Supreme Chaudhary, Ashwot Acharya, Bishesh Bohora}}
+\institute{Department of Mathematics · Kathmandu University}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+
+% -------------------- INTRODUCTION --------------------
+\section{Introduction}
+\begin{frame}{Introduction}
+Sudoku is a logic-based puzzle that originated in Japan in 1986 and gained widespread international popularity after 2005.
+
+\medskip
+
+Research by Lynce and Ouaknine (2006)\footnote{Lynce, I., \& Ouaknine, J. \textit{Sudoku as a SAT Problem}.}
+showed that Sudoku can be encoded as a SAT problem using Conjunctive Normal Form (CNF) and solved using polynomial-time inference techniques such as:
+
+\begin{itemize}
+    \item Unit Propagation
+    \item Failed Literal Rule
+    \item Hyper-Binary Resolution
+    \item Binary Failed Literal Rule
+\end{itemize}
+\end{frame}
+
+% -------------------- PROBLEM STATEMENT --------------------
+\section{Problem Statement}
+\begin{frame}{Research Problem}
+\begin{block}{Problem Statement}
+To investigate how Sudoku puzzles can be efficiently encoded into CNF and solved using SAT inference techniques, and to determine which encoding--solver combination yields optimal performance.
+\end{block}
+\end{frame}
+
+% -------------------- OBJECTIVES --------------------
+\begin{frame}{Objectives}
+\textbf{Main Objective}
+\begin{itemize}
+    \item To design and implement a SAT-based Sudoku solver.
+\end{itemize}
+
+\textbf{Specific Objectives}
+\begin{itemize}
+    \item Study CNF encodings (minimal, extended).
+    \item Implement SAT inference procedures such as UP, FLR, HBR, Bin-FLR.
+    \item Convert Sudoku grid to CNF automatically.
+    \item Test solver on benchmark datasets (e.g., Royle’s 17-clue puzzles).
+    \item Analyze performance across methods.
+\end{itemize}
+\end{frame}
+
+% -------------------- METHODOLOGY --------------------
+\section{Methodology}
+\begin{frame}{Methodology Overview}
+\begin{itemize}
+    \item Literature review on SAT, CSP, CNF encoding.
+    \item Implementation of CNF generator using 729 variables ($s_{xyz}$).
+    \item Integrate or build a SAT solver with inference algorithms.
+    \item Evaluation on large Sudoku dataset.
+    \item Compare performance of minimal vs. extended encodings.
+\end{itemize}
+\end{frame}
+
+% -------------------- EXPECTED RESULTS --------------------
+\section{Expected Results}
+\begin{frame}{Expected Outcomes}
+\begin{itemize}
+    \item Efficient SAT solver capable of solving Sudoku logically (without brute-force search).
+    \item Demonstration that extended encoding + inference rules can solve all puzzles.
+    \item Comparative performance analysis of inference techniques.
+    \item A reusable SAT framework adaptable to other constraint problems.
+\end{itemize}
+\end{frame}
+
+% -------------------- TIMELINE --------------------
+\section{Timeline}
+\begin{frame}{Timeline}
+\begin{tabular}{|c|c|}
+\hline
+Phase & Duration \\ \hline
+Review & Month 1--2 \\ \hline
+Design & Month 3--4 \\ \hline
+Implementation & Month 5--6 \\ \hline
+Testing & Month 7 \\ \hline
+Report & Month 8 \\ \hline
+\end{tabular}
+\end{frame}
+
+% -------------------- REFERENCES --------------------
+\section{References}
+\begin{frame}{References}
+\footnotesize
+\begin{itemize}
+    \item Lynce, I., \& Ouaknine, J. (2006). \textit{Sudoku as a SAT Problem}.
+    \item Simonis, H. (2005). \textit{Sudoku as a Constraint Problem}.
+    \item Bacchus, F. (2002). \textit{Exploiting the Computational Tradeoff of More Reasoning and Less Searching}.
+    \item Bacchus, F., \& Winter, J. (2003). \textit{Effective Preprocessing with Hyper-Resolution}.
+    \item Colbourn, C. (1984). \textit{The Complexity of Completing Partial Latin Squares}.
+    \item Crawford, J., \& Auton, L. (1993). \textit{SAT Problem Cross-Over Experiments}.
+    \item Robinson, J. A. (1965). \textit{Resolution Principle}.
+    \item Yato, T., \& Seta, T. (2002). \textit{Puzzle Complexity}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\centering \Huge Thank You
+\end{frame}
+
+\end{document}
