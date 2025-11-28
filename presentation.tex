@@ -25,44 +25,79 @@
 
 % -------------------- INTRODUCTION --------------------
 \section{Introduction}
-\begin{frame}{Introduction}
-Sudoku is a logic-based puzzle that originated in Japan in 1986 and gained widespread international popularity after 2005.
+\begin{frame}{Sudoku}
 
-\medskip
-
-Research by Lynce and Ouaknine (2006)\footnote{Lynce, I., \& Ouaknine, J. \textit{Sudoku as a SAT Problem}.}
-showed that Sudoku can be encoded as a SAT problem using Conjunctive Normal Form (CNF) and solved using polynomial-time inference techniques such as:
+Sudoku is a logic-based puzzle that originated in Japan in 1986 and gained widespread international popularity after 2005.A general sudoku puzzle consists of a $n^2 \times n^2$ grid further sectioned into smaller $n \times n$ squares.\\
+\textbf{How it’s played? (9x9)}
 
 \begin{itemize}
-    \item Unit Propagation
-    \item Failed Literal Rule
-    \item Hyper-Binary Resolution
-    \item Binary Failed Literal Rule
+    \item Fill each row, column and squares (3x3) with digits from 0 to 9.
+    \item None of the digits should be repeated in each row, column and square.
+    \item Initially clues are provided i.e some digits are already filled.
 \end{itemize}
+
+\end{frame}
+
+\begin{frame}{SAT}
+    
+\textbf{The Boolean Satisfiability Problem  (SAT)} \\
+A propositional logic formula, also called Boolean expression, is built from variables, operators AND (conjunction), OR (disjunction), NOT (negation), and parentheses. A formula is said to be satisfiable if it can be made TRUE by assigning appropriate logical values (i.e. TRUE, FALSE) to its variables. The Boolean satisfiability problem (SAT) is, given a formula, to check whether it is satisfiable. (Wikipedia)
+\\Eg.
+$p \wedge (q \vee r)$ is satisfiable, with the assignment $  p= TRUE, q = FALSE , r = TRUE $.
+\end{frame}
+\begin{frame}
+   \textbf{SAT Solvers}
+\\
+SAT solvers are algorithms or software tools that determine whether a given Boolean formula is satisfiable (i.e., if there exists an assignment of true/false values to variables that makes the formula true).
+If satisfiable then they provide the satisfying assignments.
+ 
+\end{frame}
+
+\begin{frame}
+    \textbf{Why SAT for Sudoku?}
+    Though there are multiple ways to figure out solution for this game like backtracking, We've chosen this because it,
+    \begin{itemize}
+        \item Aids generalization to sudoku puzzles of higher order.
+        \item Proves unsatisfiablility in case of no solutions to given puzzle.
+        \item We were interested in SAT problem and Applying SAT Solvers for a familiar game is a interesting as well.
+    \end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}{A Formal Justification}
+
+\begin{itemize}
+    \item The \textbf{SAT problem} is \textbf{NP-complete} [Cook-Levin Theorem].
+    \item A \textbf{generalized Sudoku} is also \textbf{NP-complete} [Yato and Seta, 2003].
+    \item Being NP-complete, generalized Sudoku is in \textbf{NP} and can be \textbf{polynomial-time reduced} to any NP-hard problem, including SAT.
+    \item Therefore, in the \textbf{worst-case scenario}, any Sudoku puzzle can be \textbf{transformed into a SAT problem}.
+    \item For typical finite Sudoku puzzles, the size is much smaller than the general case, but this connection highlights that \textbf{efficient SAT-based solving is possible and formally justified}.
+\end{itemize}
+
 \end{frame}
 
 % -------------------- PROBLEM STATEMENT --------------------
 \section{Problem Statement}
-\begin{frame}{Research Problem}
-\begin{block}{Problem Statement}
-To investigate how Sudoku puzzles can be efficiently encoded into CNF and solved using SAT inference techniques, and to determine which encoding--solver combination yields optimal performance.
-\end{block}
+\begin{frame}{Problem Statement}
+To investigate how Sudoku puzzles can be efficiently encoded into CNF and solved using SAT inference techniques, and to determine the optimal encoding and SAT solver for higher dimension Sudoku problems.
 \end{frame}
 
 % -------------------- OBJECTIVES --------------------
 \begin{frame}{Objectives}
 \textbf{Main Objective}
 \begin{itemize}
-    \item To design and implement a SAT-based Sudoku solver.
+    \item To Build a SAT-based Sudoku solver.
 \end{itemize}
 
 \textbf{Specific Objectives}
 \begin{itemize}
-    \item Study CNF encodings (minimal, extended).
-    \item Implement SAT inference procedures such as UP, FLR, HBR, Bin-FLR.
-    \item Convert Sudoku grid to CNF automatically.
-    \item Test solver on benchmark datasets (e.g., Royle’s 17-clue puzzles).
-    \item Analyze performance across methods.
+    \item To Represent the game sudoku in computer system
+    \item To Convert the state of the Game sudoku to Conjective Normal Form
+    \item To implement a sat solver for standard $ 9 \times 9 $ sudoku
+    \item To test and compare sat solvers
+    \item To test for scalability in $ n^2 \times n^2 $ sudoku solver
 \end{itemize}
 \end{frame}
 
@@ -70,11 +105,11 @@ To investigate how Sudoku puzzles can be efficiently encoded into CNF and solved
 \section{Methodology}
 \begin{frame}{Methodology Overview}
 \begin{itemize}
-    \item Literature review on SAT, CSP, CNF encoding.
-    \item Implementation of CNF generator using 729 variables ($s_{xyz}$).
-    \item Integrate or build a SAT solver with inference algorithms.
-    \item Evaluation on large Sudoku dataset.
-    \item Compare performance of minimal vs. extended encodings.
+    \item Representation of sudoku requires encoding the game by encoding algorithms ( eg boolean encoding , pair wise encoding etc )
+    \item Encoded sudoku will be transformed to CNF form ( boolean non-CNF expression may also expressed in CNF  )
+    \item Evaluation SAT solver algorithms ( eg DPLL , CDCL )
+    \item Implementation of required SAT solver algorithm for $9 \times 9 $ sudoku ( 17 cues problems)
+    \item Test the algorithm's effectiveness for higher dimension sudoku 
 \end{itemize}
 \end{frame}
 
@@ -82,10 +117,9 @@ To investigate how Sudoku puzzles can be efficiently encoded into CNF and solved
 \section{Expected Results}
 \begin{frame}{Expected Outcomes}
 \begin{itemize}
-    \item Efficient SAT solver capable of solving Sudoku logically (without brute-force search).
-    \item Demonstration that extended encoding + inference rules can solve all puzzles.
-    \item Comparative performance analysis of inference techniques.
-    \item A reusable SAT framework adaptable to other constraint problems.
+    \item To build a encoder that converts Sudoku to Conjective Normal Form
+    \item To build a SAT solver for $9 \times 9$ sudoku 
+    \item Build a SAT solver for higher dimension Sudoku (e.g $16 \times 16 $ sudoku or $25 \times 25$ sudoku)
 \end{itemize}
 \end{frame}
 
@@ -94,12 +128,15 @@ To investigate how Sudoku puzzles can be efficiently encoded into CNF and solved
 \begin{frame}{Timeline}
 \begin{tabular}{|c|c|}
 \hline
-Phase & Duration \\ \hline
-Review & Month 1--2 \\ \hline
-Design & Month 3--4 \\ \hline
-Implementation & Month 5--6 \\ \hline
-Testing & Month 7 \\ \hline
-Report & Month 8 \\ \hline
+Work & Duration \\ \hline
+Literature review of SAT solvers for sudoku & Week 1 \\ \hline
+Study of various CNF encoding methods & week 2 \\ \hline
+Encoding implementation for $9 \times 9$ sudoku & week 3 \\ \hline
+Study of various SAT solver Algorithms  & week 4 \\ \hline
+Implementation of SAT solver for $9 \times 9$ sudoku & week 5 \\ \hline
+Scability test for $n^2 \times n^2$ sodoku & week 6 \\ \hline
+Report writing and paper finalization & week 7 \\ \hline
+
 \end{tabular}
 \end{frame}
 

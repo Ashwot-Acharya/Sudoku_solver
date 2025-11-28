@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.9.1)  27 NOV 2025 18:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.9.1)  28 NOV 2025 06:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -819,6 +819,10 @@ File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mat
 [7
 
 ]
+Overfull \vbox (14.03117pt too high) detected at line 79
+ []
+
+
 
 [8
 
@@ -855,6 +859,22 @@ File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mat
 [16
 
 ]
+
+[17
+
+]
+
+[18
+
+]
+
+[19
+
+]
+
+[20
+
+]
 \tf@nav=\write6
 \openout6 = `presentation.nav'.
 
@@ -873,18 +893,18 @@ Package rerunfilecheck Info: File `presentation.out' has not changed.
 (rerunfilecheck)             Checksum: 9EF81A02D55D6B0783A1B593721B919A;634.
  ) 
 Here is how much of TeX's memory you used:
- 25220 strings out of 475171
- 502666 string characters out of 5767096
- 856195 words of memory out of 5000000
- 47664 multiletter control sequences out of 15000+600000
- 572562 words of font info for 84 fonts, out of 8000000 for 9000
+ 25178 strings out of 475171
+ 501477 string characters out of 5767096
+ 857194 words of memory out of 5000000
+ 47617 multiletter control sequences out of 15000+600000
+ 569073 words of font info for 71 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  128i,13n,123p,1934b,759s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb>
-Output written on presentation.pdf (16 pages, 117386 bytes).
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb>
+Output written on presentation.pdf (20 pages, 132980 bytes).
 PDF statistics:
- 204 PDF objects out of 1000 (max. 8388607)
- 156 compressed objects within 2 object streams
- 39 named destinations out of 1000 (max. 500000)
+ 231 PDF objects out of 1000 (max. 8388607)
+ 177 compressed objects within 2 object streams
+ 47 named destinations out of 1000 (max. 500000)
  91 words of extra memory for PDF output out of 10000 (max. 10000000)
 
